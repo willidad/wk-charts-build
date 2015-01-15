@@ -2,7 +2,7 @@
   "name": "wk-charts",
   "version": "0.4.0",
   "authors": [
-    "Willi Klenk <willi@klenk-bondorf.de>"
+    "Willi Klenk <willi.klenk@googlemail.com>"
   ],
   "main": [
     "./lib/wk-charts.js",
@@ -20,7 +20,8 @@
   "dependencies": {
     "angular": "^1.3.x",
     "angular-animate": "^1.3.x",
-    "d3": "^3.4.x",
+    "angular-sanitize": "^1.3.x",
+    "d3": "^3.5.x",
     "lodash": "^2.4.1"
   }
 }

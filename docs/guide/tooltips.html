@@ -1,0 +1,194 @@
+<div>
+
+
+<div class="content-description">
+    <h1 id="tooltips">Tooltips</h1>
+<h2 id="custom-tooltips">Custom Tooltips</h2>
+<p>A custom tooltip is implemented by providing a HTML template url as value to the <code>tooltips</code> behavior directive. This template will be compiled by Angular and be used instead of the standard template.
+The custom template will be positioned as usual, in case value markers are displayed for na axis these will be created and positioned automatically, like with the standard template.</p>
+<blockquote>
+<p>The tooltips function creates an isolated scope, which is a child of the charts parent scope. Thus, scope variables of the charts container hierarchy are accessible from the template through $parent.</p>
+<p>For more sophisticated formatting a controller can be attached to the template using the ng-controller directive.</p>
+</blockquote>
+<p>To support tooltip formatting the $scope for this template exposes a number of attributes:</p>
+<table>
+<thead>
+<tr>
+<th>scope property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ttData</td>
+<td>a object containing the data row the cursor is over</td>
+</tr>
+<tr>
+<td>scale</td>
+<td>an object referring to the charts dimensions scale functions</td>
+</tr>
+<tr>
+<td>map</td>
+<td>an object referring to the charts dimensions map function</td>
+</tr>
+<tr>
+<td>value</td>
+<td>an object referring to the charts dimensions value function</td>
+</tr>
+<tr>
+<td>properties</td>
+<td>an object containing the charts dimension properties</td>
+</tr>
+<tr>
+<td>label</td>
+<td>an abject containing the charts dimensions labels</td>
+</tr>
+</tbody>
+</table>
+<p>scales, maps, properties and labels scope variables have properties with the names of the chart dimensions, i.e. x, y ,color, size, etc.</p>
+<h3 id="scale">scale</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Usage</th>
+<th style="text-align:left"><code>scale.&lt;dimension name&gt;(value)</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Returns</td>
+<td style="text-align:left">the translated value</td>
+</tr>
+<tr>
+<td style="text-align:left">Examples</td>
+<td style="text-align:left"><code>scale.color(&#39;abc&#39;)</code> returns the color value used to represent <code>&#39;abc&#39;</code> in the chart</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>scale.x(ttData.abc)</code> returns the x-axis pixel offset representing the value in <code>ttData.abc</code></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>scale.shape(&#39;xyz&#39;)</code> returns the name of the svg shape used to repesent <code>&#39;xyz&#39;</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="map">map</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Usage</th>
+<th style="text-align:left"><code>maps.&lt;dimension name&gt;()</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Returns</td>
+<td style="text-align:left">the translated value</td>
+</tr>
+<tr>
+<td style="text-align:left">Examples</td>
+<td style="text-align:left"><code>map.color()</code> returns the color value for the color dimension.</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>map.x()</code> returns the x-axis pixel offset.</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>map.shape()</code> returns the name of the svg shape.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Important</strong> the maps functions should not be used for layer properties.</p>
+</blockquote>
+<h3 id="value">value</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Usage</th>
+<th style="text-align:left"><code>value.&lt;dimension name&gt;()</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Returns</td>
+<td style="text-align:left">the translated value</td>
+</tr>
+<tr>
+<td style="text-align:left">Examples</td>
+<td style="text-align:left"><code>value.color()</code> returns the value of the color property.</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>value.x()</code> returns the value of the x property.</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>value.shape()</code> returns the value of the shape property.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="properties">properties</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Usage</th>
+<th style="text-align:left"><code>properties.&lt;dimension name&gt;</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Returns</td>
+<td style="text-align:left">an array of property names for the dimension.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="label">label</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Usage</th>
+<th style="text-align:left"><code>label.&lt;dimension name&gt;</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Returns</td>
+<td style="text-align:left">the label text defined for the dimension. If no label is defined it returns the property name.</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">In case the property attribute of the dimension is not defined it returns an empty string.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="example-templates">Example Templates</h2>
+<p>The following examples illustrate how to create an template in Jade.
+The first example displays a simple tooltip with three values in a singe line.
+The tooltip border is colored with the color of the chart object below the cursor:</p>
+<pre><code>table.table.table-condensed.custom-tooltip(ng-style=&quot;{&#39;border-color&#39;:map.color()}&quot;)
+tr
+    td Days
+    td {{ttData.CLASS_BOUNDS_LOWER}} to {{ttData.CLASS_BOUNDS_UPPER}}
+    td Units : {{ttData.CLASS_COUNT}}
+</code></pre>
+<p>The second example shows a table with the layer property values. In this case the text is colored:</p>
+<pre><code>table.table.table-condensed
+thead
+    tr
+        th(colspan=&quot;2&quot;) {{value.x() | date:&#39;d MMM yyyy&#39;}}
+    tr
+        th {{label.color}}
+        th {{label.y}}
+tbody
+    tr(ng-repeat=&quot;prop in properties.color()&quot;, ng-style=&quot;{&#39;color&#39;:scale.color(prop)}&quot;)
+        td {{prop}}
+        td {{ttData[prop] | number:1}}
+</code></pre>
+
+</div>
+
+
+</div>

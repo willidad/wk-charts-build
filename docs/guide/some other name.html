@@ -1,0 +1,92 @@
+<div>
+
+
+<div class="content-description">
+    <h1 id="introduction">Introduction</h1>
+<p>When using the wk-charts package, chart layouts are defined using a set of AngularJs directives, which enable you to implement a chart on you page through HTML Markup. 
+To draw the charts wk-charts uses the power of the d3 library. </p>
+<p>Chart layouts are defined through a set of directives and directive attributes. There is a wide range of options to fine tune the chart layout, however, thanks to meaningful defaults for these options 
+getting started is simple and requires minimal markup.</p>
+<p><img src="./pie1.png" alt="pie chart" title="Simple Pie Chart"></p>
+<p>The markup for this chart is.</p>
+<pre><code>&lt;chart data=&quot;exampleData&quot;&gt;                  // defines the chart container and the data to be shown. 
+                                            // exampleData is a Scope variable. Its value is expected to be an array of objects, 
+                                            // where each array element represents one pie segment 
+    &lt;layout pie&gt;                            // defines what type of chart should be drawn, in this case a pie chart
+        &lt;size property=&quot;population&quot; /&gt;      // defines the data property that determines the relative size of the pie segments
+        &lt;color property=&quot;age&quot; /&gt;            // defines the data property that determines the segment color
+    &lt;/layout&gt;
+&lt;/chart&gt;
+</code></pre>
+<p>To show a legend of &#39;age&#39; values and how they map to colors just add an additional attribute to the <code>&lt;color&gt;</code> element: <code>&lt;color property=&quot;age&quot; values-legend/&gt;</code>. The following chart will be rendered then:</p>
+<p><img src="./pie2.png" alt="pie chart" title="Simple Pie Chart with Legend"></p>
+<p>To annotate each pie segment with the values of the population property just add the <code>data-labels</code> attribute to the <code>&lt;size&gt;</code> element. Voila, here you go:</p>
+<p><img src="./pie3.png" alt="pie chart" title="Simple Pie Chart with Legend and data labels"></p>
+<p>Please see pie chart to see a life example and learn more about the pie chart options. </p>
+<h2 id="chart">Chart</h2>
+<p>A chart represents collection of layouts, dimensions and behaviors that are exposed in a common container (a HTML Div to be precise) and share the same set of data. Within a chart layouts (e.g. a line and a bubble chart) can share dimensions, but do not need to. 
+They always share the data, and typically the area in which they are drawn. </p>
+<h2 id="chart-dimensions">Chart Dimensions</h2>
+<p>Chart dimensions are the basic building blocks to visualize data. Chart layouts support different sets of dimensions, e.g. a Pie Chart can be used to visualize two dimensions:</p>
+<ul>
+<li>a categorial dimension, represented in the pie segment and (optionally) through the segment color</li>
+<li>some sort of numeric value, represented through the size of the pie segment. 
+A line chart support a x and a y dimension, as well a color to represent the data series. See --- for a detailed description of capabilities</li>
+</ul>
+<p>In contrast, a line chart typically represents a linear dimension on the x-axis (e.g. time or date) and one or more related sets of values (data series) mapped into the y-dimension. The series itself represents a categorial dimensions, which is typically encodes through color. 
+the charts library at this time supports a number of different dimension types, which, depending int he type of chart layout selected, may be combined to form the graph:</p>
+<ul>
+<li>x : the horizontal position of a chart object</li>
+<li>y : the vertical position of a chart object</li>
+<li>color: Coloring of data depending on data attributes</li>
+<li>size: Size of a chart object (e.g. a circle) depending on a data attribute</li>
+<li>shape: defines the shape of a chart object (circle, box, arrow, cross, etx.) to represent data attributes</li>
+</ul>
+<p>Dimensions can be combined to represent a specific data value. The layout type determines which dimensions are applicable, and how exactly they are represented. For details see the description of layout types</p>
+<h3 id="axis-and-legends">Axis and legends</h3>
+<p>Axis and legends visualize the the mapping &#39;rules&#39; for data on the visual dimension, a color legend explains which color represents which data data value or data series, the x-axis outlines where on the horizontal dimension a sepcific data value will be represented.</p>
+<h3 id="scales">Scales</h3>
+<p>Scales define how data is translated into visual representation, and are at the very core of the charting system. Scales in charts are implemented through the d3 scale system, which supports a very rich set of methods to transform data into visual representation
+D3 (and thus the charting systems) supports two basic types of scales:</p>
+<ul>
+<li>Quantitive - repesenting an continous data domain, such as number or dates</li>
+<li>Ordinal - representing an enumeration of descrete values, such as names or categories. 
+For a more detailed discussion please see <a href="https://github.com/mbostock/d3/wiki/Scales">d3 Documentation in Scales</a></li>
+</ul>
+<p>The scale attributes describe how the data value is translated in the visual representation (e.g. a date value into a horizontal pixel offset) Details are with the different scale types. Please note that x,y,color and size dimensions are quantitive by nature, and ca ne used to represent quantitive domsins direcly. 
+Shape scales are ordinal, thus in order to represent quantitative data through shapes the data needs to be categorized into a limited number of categories that ca then be represented through shapes. d2 (and thus charts) supports a a number of means (e.g. thresholds) to achieve this. See ... for details</p>
+<h2 id="layout">Layout</h2>
+<p>The layout defined how the dimensions are graphically represented. The Charts package supports the following layout types:</p>
+<ul>
+<li>Line </li>
+<li>Area</li>
+<li>Bar</li>
+<li>Clustered Bar</li>
+<li>Stacked Bar</li>
+<li>Bubble</li>
+<li>Scatter</li>
+<li>Pie</li>
+<li>Gauge</li>
+<li>Geographic Map</li>
+</ul>
+<p>Each of the layout types will be described in detail in chapter xxx</p>
+<h2 id="interactive-behaviors">Interactive Behaviors</h2>
+<p>Once the chart is drawn on the screen, the Charts package supports a number o different dynamic interactions, called &#39;behaviors&#39; (in alignment with d3) in this document</p>
+<h3 id="tooltips">Tooltips</h3>
+<p>Tooltips are displayed when the user moves the mouse over a object in the cart, and display the dimensional source values, as well as other (user defined) attributes of the represented object. While tooltis can be enabled or disabled, all layout types support them.</p>
+<h3 id="brush-and-selection">Brush and Selection</h3>
+<p>Brush and selection allow the user to select a subset of the data subset and highlights the selection, and fires appropriate events to trigger action in the hosting application. Mot all layout types support brushing an selection, see description of layout types for details
+Brush and Selection an be enabled and disabled for each layout instance</p>
+<h3 id="pan-and-zoom">Pan and Zoom</h3>
+<p>Pan and zoom allow to move a chart in its drawing window, resp allow to resize the chart with the mouse. In the current version only Geographic Maps support this behavior</p>
+<h2 id="data">Data</h2>
+<h3 id="basic-data-format">Basic Data Format</h3>
+<p>Charts expects data to be a &#39;array of objects&#39; (row oriented data) or an &#39;object of arrays&#39; (column oriented data). When defined the chart dimensions, the object attribute names are used to referred to the data series, the array elements (or, in case of &#39;object of arrays&#39; the index of the arrays) identify a single data element to be drawn.</p>
+<h3 id="layers-or-data-series-">Layers (or data series)</h3>
+<p>Charts refers to data series (e.g. the temperature over time for different cities) in the data as layers. A number of layout types (line, stacked bad or area, clustered bar, ...) can represent several layers or series. </p>
+<p>The data attributes that are drawn in layers can be specified explicitly (in the property attribute if the dimension), or are derived implicitly for the data supplied. The layers are derived by using the list of data properties minus the properties explicitly assigned to other chart dimensions.</p>
+
+</div>
+
+
+</div>

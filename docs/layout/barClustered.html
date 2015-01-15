@@ -1,0 +1,67 @@
+<div>
+
+    <h3>Layout <em>barClustered</em></h3>
+    draws a clustered bar layout
+
+  
+  <h3 id="usage">Usage</h3>
+  <div class="usage">
+  <pre><code>&lt;layout bar-clustered [padding=&quot;&quot;] ... &gt;&#13;&#10;  ...&#13;&#10;&lt;/layout&gt;&#13;</code></pre>
+    
+  </div>
+  <table class="variables-matrix">
+        <thead>
+          <tr>
+            <th>Required Dimensions</th><th>Dimension Attribute Defaults</th>
+          </tr>
+        </thead>
+        <tbody><tr>
+                <td>x</td>
+                <td><div>type = linear</div><div>domainRange = extent</div></td>
+            </tr><tr>
+                <td>y</td>
+                <td><div>type = linear</div><div>domainRange = extent</div></td>
+            </tr><tr>
+                <td>color</td>
+                <td><div>type = category20</div></td>
+            </tr></tbody>
+      </table>
+<section class="api-section">
+  <h3>Arguments</h3>
+
+<table class="variables-matrix input-arguments">
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>
+        <div><strong>padding </strong></div>
+        <div><em>(optional, default: true)</em></div>
+        <div><em> (Accepted Values: true, false, [padding, outerPadding])</em></div> 
+
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-boolean">boolean</a><a href="" class="label type-hint type-hint-list">list</a>
+      </td>
+      <td>
+        <p>Defines the inner and outer padding between the bars.</p>
+<p><code>padding</code> and <code>outerPadding</code> are measured in % of the total bar space occupied, i.e. a padding of 20 implies a bar height of 80%, padding 50 implies bar and space have the same size.</p>
+<p><code>padding</code> is 10, <code>outerPadding</code> is 0 unless explicitly specified differently.</p>
+<p>Setting <code>padding=&quot;false&quot;</code> is equivalent to [0,0]</p>
+
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+</section>
+  
+
+</div>

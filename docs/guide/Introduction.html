@@ -1,0 +1,64 @@
+<div>
+
+
+<div class="content-description">
+    <h1 id="introduction">Introduction</h1>
+<p>When using the wk-charts package, chart layouts are defined using a set of AngularJs directives, which enable you to implement a chart on you page through HTML Markup. 
+To draw the charts wk-charts uses the power of the d3 library. </p>
+<h1 id="defining-charts">Defining charts</h1>
+<p>Chart layouts are defined through a set of directives and directive attributes. There is a wide range of options to fine tune the chart various layouts, however, thanks to meaningful defaults for these options 
+getting started is simple and requires minimal markup. Here are a few illustrative examples</p>
+<h2 id="defining-a-simple-chart">Defining a simple chart</h2>
+<p>The following markup defines a simple pie chart: </p>
+<pre><code>&lt;chart data=&quot;exampleData&quot;&gt;                   defines the chart container and the data to be shown. 
+                                             exampleData is a Scope variable. Its value is expected to be an array of objects, 
+                                             where each array element represents one pie segment 
+    &lt;layout pie&gt;                             defines what type of chart should be drawn, in this case a pie chart
+        &lt;size property=&quot;population&quot; /&gt;       defines the data property that determines the relative size of the pie segments
+        &lt;color property=&quot;age&quot; /&gt;             defines the data property that determines the segment color
+    &lt;/layout&gt;
+&lt;/chart&gt;
+</code></pre>
+<p>The <code>exampleData</code> looks like this:</p>
+<pre><code>[
+    { &quot;age&quot;:&quot;&lt;5&quot;, &quot;population&quot;:2704659 },
+    { &quot;age&quot;:&quot;5-13&quot;, &quot;population&quot;:4499890 },
+    { &quot;age&quot;:&quot;14-17&quot;, &quot;population&quot;:2159981 },
+    { &quot;age&quot;:&quot;18-24&quot;, &quot;population&quot;:3853788 },
+    { &quot;age&quot;:&quot;25-44&quot;, &quot;population&quot;:14106543 },
+    { &quot;age&quot;:&quot;45-64&quot;, &quot;population&quot;:8819342 },
+    { &quot;age&quot;:&quot;≥65&quot;, &quot;population&quot;:612463 }
+]
+</code></pre>
+<p>The resulting Pie Chart looks like this:   </p>
+<p><img src="pie1.png" alt="Pie Chart" width="150px"></p>
+<p>Pie Chart</p>
+<p>Lets &#39;beef up&#39; the pie chart a little bit: </p>
+<ul>
+<li>show a legend of &#39;age&#39; values and how they map to colors:  <code>&lt;color property=&quot;age&quot; values-legend/&gt;</code></li>
+<li>annotate each pie segment with the values of the population property <code>&lt;layout pie labels&gt;</code> </li>
+</ul>
+<p>Voila, here is the chart:</p>
+<p><img src="pie w label.png" alt="Pie Chart with labels" width="350px"></p>
+<p>Please see pie chart to see a life example and learn more about the pie chart options. </p>
+<h2 id="a-simple-column-chart">A simple column chart</h2>
+<p>Charts transform data into a visual representation, and there is many ways to show the same set of data. The data above can easily be shown as a column chart using the markup below. 
+To make the chart a bit more fancy we added data labels, axis values and a chart title. As you can see, this is done by adding a few optional attributes to the markup elements. </p>
+<pre><code>&lt;chart data=&quot;exampleData&quot; title=&quot;Column Chart Example&quot;&gt;
+    &lt;layout column labels&gt;
+        &lt;x axis property=&quot;age&quot;, type=&quot;ordinal&quot;/&gt;
+        &lt;y property=&quot;population&quot;/&gt;
+        &lt;color property=&quot;age&quot;/&gt;
+    &lt;/layout&gt;
+&lt;/chart&gt;
+</code></pre>
+<p>The resulting chart looks like this:</p>
+<p><img src="column w legend and labels.png" alt="Column Chart w Legend and Labels" width="350px"></p>
+<p>As you can see we are using different dimensions to represent the same data. <em>population</em> goes on the vertical axis (<code>y</code>), whereas <em>age</em> is used for two different dimension, <code>x</code> and <code>color</code>
+Please note that the x-dimension has a type definition <code>type=&quot;ordinal&quot;</code> This tells the chart that <em>age</em> is a set of discrete values, in contrast to the y dimension, which is, in our terminology, a <strong>quantitative</strong> dimension. 
+Each dimension needs a type, however there are default types for each that do not need to  be specified. We will explain this in a later section in more detail</p>
+
+</div>
+
+
+</div>

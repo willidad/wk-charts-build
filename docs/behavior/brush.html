@@ -1,0 +1,200 @@
+<div>
+
+
+
+<header class="api-profile-header">
+  <h1 class="api-profile-header-heading">brush</h1>
+  <ol class="api-profile-header-structure naked-list step-list">
+    
+    <li>
+      - behavior in module <a href="/">wk.chart</a>
+    </li>
+  </ol>
+</header>
+
+
+
+<div class="api-profile-description">
+  <p>enable brushing behavior</p>
+
+</div>
+
+
+
+
+<div>
+  
+
+  
+  <h2>Directive Info</h2>
+  <ul>
+    
+    <li>This directive executes at priority level 0.</li>
+  </ul>
+
+  
+  <h2 id="usage">Usage</h2>
+  <div class="usage">
+  
+    <ul>
+    <li>as attribute:
+        <pre><code>&lt;x, y, range-x, range-y or layout&#13;&#10;  [brush=&quot;&quot;]&#13;&#10;  [brush-extent=&quot;&quot;]&#13;&#10;  [selected-values=&quot;&quot;]&#13;&#10;  [selected-domain=&quot;&quot;]&#13;&#10;  [selected-domain-change=&quot;&quot;]&#13;&#10;  [brush-start=&quot;&quot;]&#13;&#10;  [brush-end=&quot;&quot;]&#13;&#10;  [clear-brush=&quot;&quot;]&gt;&#13;&#10;...&#13;&#10;&lt;/x, y, range-x, range-y or layout&gt;&#13;</code></pre>
+      </li>
+    </ul>
+  </div>
+  
+<section class="api-section">
+  <h4>Arguments</h4>
+  
+<table class="variables-matrix input-arguments">
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>
+        <div><strong>brush </strong></div>
+        
+        <div><em> (Accepted Values: none)</em></div> 
+
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-string">string</a>
+      </td>
+      <td>
+        <p>Brush name
+  Brush will be published under this name for consumption by other layouts</p>
+
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <div><strong>brushExtent </strong></div>
+        
+        
+
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-array">array</a>
+      </td>
+      <td>
+        <p>Contains the start and end index into the data array for the brushed axis. Is undefined if brush is empty or is a xy (layout) brush</p>
+
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <div><strong>selectedValues </strong></div>
+        
+        
+
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-array">array</a>
+      </td>
+      <td>
+        <p>Contains array of the axis values of the selected the brush  area. Is undefined if brush is empty or is xy (layout) brushes</p>
+
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <div><strong>selectedDomain </strong></div>
+        
+        
+
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-array">array</a>
+      </td>
+      <td>
+        <p>Contains an array of data objects for the selected brush area.</p>
+
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <div><strong>selectedDomainChange </strong></div>
+        
+        
+
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-expression">expression</a>
+      </td>
+      <td>
+        <p>expression to evaluate upon a change of the brushes selected domain. The selected domain is available as ´domain´</p>
+
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <div><strong>brushStart </strong></div>
+        
+        
+
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-expression">expression</a>
+      </td>
+      <td>
+        <p>expression to evaluate upon a start of brushing. Is fired on &#39;mousedown&#39;.</p>
+
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <div><strong>brushEnd </strong></div>
+        
+        
+
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-expression">expression</a>
+      </td>
+      <td>
+        <p>expression to evaluate upon a end of brushing. is fired on &#39;mouseup&#39;. The selected domain is available as ´domain´</p>
+
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <div><strong>clearBrush </strong></div>
+        
+        
+
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-function">function</a>
+      </td>
+      <td>
+        <p>assigns a function that clears the brush selection when called via a bound scope variable.
+Usage: bind a scope variable to the attribute: <code>clear-selection=&quot;scopeVar&quot;</code>. <code>brush</code> assigns a function to scopeVar that can be called to reset the brush, e.g. in a button: <code>&lt;button ng-click=&quot;scopeVar()&quot;&gt;Clear Brush&lt;/button&gt;</code></p>
+
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+</section>
+  
+
+
+  
+</div>
+
+
+</div>

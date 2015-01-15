@@ -1,0 +1,318 @@
+<div>
+
+
+
+<header class="api-profile-header">
+  <h1 class="api-profile-header-heading">y</h1>
+  <ol class="api-profile-header-structure naked-list step-list">
+    
+    <li>
+      - dimension in module <a href="/">wk.chart</a>
+    </li>
+  </ol>
+</header>
+
+
+
+<div class="api-profile-description">
+  <p>This dimension defined the vertical axis of the chart</p>
+
+</div>
+
+
+
+
+<div>
+  
+
+  
+  <h2>Directive Info</h2>
+  <ul>
+    
+    <li>This directive executes at priority level 0.</li>
+  </ul>
+
+  
+  <h2 id="usage">Usage</h2>
+  <div class="usage">
+  
+    <ul>
+    
+      <li>as element:
+      
+      <pre><code>&lt;y&#13;&#10;  [axis=&quot;&quot;]&#13;&#10;  [type=&quot;&quot;]&#13;&#10;  [exponent=&quot;&quot;]&#13;&#10;  [property=&quot;&quot;]&#13;&#10;  [layer-property=&quot;&quot;]&#13;&#10;  [range=&quot;&quot;]&#13;&#10;  [date-format=&quot;&quot;]&#13;&#10;  [domain=&quot;&quot;]&#13;&#10;  [domain-range=&quot;&quot;]&#13;&#10;  [label=&quot;&quot;]&#13;&#10;  [format=&quot;&quot;]&#13;&#10;  [reset=&quot;&quot;]&#13;&#10;  [legend=&quot;&quot;]&#13;&#10;  [values-legend=&quot;&quot;]&#13;&#10;  [legend-title=&quot;&quot;]&gt;&#13;&#10;...&#13;&#10;&lt;/y&gt;&#13;</code></pre>
+      </li>
+    </ul>
+  </div>
+  
+<section class="api-section">
+  <h3>Arguments</h3>
+
+<table class="variables-matrix input-arguments">
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>
+        <div><strong>axis </strong></div>
+        
+        
+
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-string">string</a>
+      </td>
+      <td>
+        <p>Define if a vertical axis should be displayed Possible values:</p>
+
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <div><strong>type </strong></div>
+        <div><em>(optional, default: layout specific - see layout docs)</em></div>
+        
+
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-scale">scale</a>
+      </td>
+      <td>
+        <p>Defines the d3 scale applied to transform the input data to a dimensions display value. All d3 scales are supported, as well as wk-chart specific extensions described here. #TODO insert correct links</p>
+
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <div><strong>exponent </strong></div>
+        <div><em>(optional</em></div>
+        
+
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-number">number</a>
+      </td>
+      <td>
+        <p>This attribute is only evaluated with pow and log scale types - defines the exponent for the d3 pow and log scale #TODO insert correct links</p>
+
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <div><strong>property </strong></div>
+        
+        
+
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-expression">expression</a>
+      </td>
+      <td>
+        <p>the input data property (properties) used to compute this dimension. In case the charts supports a the data layer dimension this attribute can be a list of data properties.
+          In this case the property field can be omitted, for non-layer dimension it is required.</p>
+
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <div><strong>layerProperty </strong></div>
+        <div><em>(optional</em></div>
+        
+
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-expression">expression</a>
+      </td>
+      <td>
+        <p>defines the container object for property in case the data is a hierachical structure. See (#todo define link)
+         for more detail</p>
+
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <div><strong>range </strong></div>
+        <div><em>(optional</em></div>
+        
+
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-expression">expression</a>
+      </td>
+      <td>
+        <p>The scale types range attribute. For x and y scales the range is set to the pixel width and height of the drawing container, for category... scales the range is set to the scales color range</p>
+
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <div><strong>dateFormat </strong></div>
+        <div><em>(optional</em></div>
+        
+
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-expression">expression</a>
+      </td>
+      <td>
+        <p>applies to Time scale type only. Describes the date display format of the property field content. can be omitted if the field is already a javascript Date object, otherwise the format is used to transform
+        the property values into a Javascript Date object.Date Format is described using d3&#39;s <a href="https://github.com/mbostock/d3/wiki/Time-Formatting#format">Time Format</a></p>
+
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <div><strong>domain </strong></div>
+        <div><em>(optional</em></div>
+        
+
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-expression">expression</a>
+      </td>
+      <td>
+        <p>the scale types domain property. Meaning and acceptable values for domain depend on teh scale type, thus please see (TODO: define link)
+        for further explanation</p>
+
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <div><strong>domainRange </strong></div>
+        <div><em>(optional</em></div>
+        
+
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-expression">expression</a>
+      </td>
+      <td>
+        <p>Certain scale type and dimensions require a calculation of the data range to perform the correct mapping onto the scale output.domainRange defined the rule to be used to calculate this. Possible values are:
+        min: [0 .. minimum data value]
+        max: [0 .. maximum data value]
+        extent: [minimum data value .. maximum data value]
+        total: applies only layer dimensions, calculates as 0 ..  maximum of the layer value totals]</p>
+
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <div><strong>label </strong></div>
+        <div><em>(optional</em></div>
+        
+
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-expression">expression</a>
+      </td>
+      <td>
+        <p>defined the dimensions label text. If not specified, the value of teh &#39;property&#39; attribute is used</p>
+
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <div><strong>format </strong></div>
+        <div><em>(optional</em></div>
+        
+
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-expression">expression</a>
+      </td>
+      <td>
+        <p>a formatting string used to display tooltip and legend values for the dimension. if omitted, a default format will be applied
+        please note tha this is different from the &#39;tickFormat&#39; attribute</p>
+
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <div><strong>reset </strong></div>
+        <div><em>(optional</em></div>
+        
+
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-expression">expression</a>
+      </td>
+      <td>
+        <p>If sepcified or set to true, the domain values are reset every time the carts data changes.</p>
+
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <div><strong>legend </strong></div>
+        <div><em>(optional, default: true)</em></div>
+        <div><em> (Accepted Values: true, false, top-right, top-left, bottom-left, bottom-right, #divName)</em></div> 
+
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-expression">expression</a>
+      </td>
+      <td>
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <div><strong>valuesLegend </strong></div>
+        <div><em>(optional</em></div>
+        
+
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-expression">expression</a>
+      </td>
+      <td>
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <div><strong>legendTitle </strong></div>
+        <div><em>(optional</em></div>
+        
+
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-expression">expression</a>
+      </td>
+      <td>
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+</section>
+  
+
+
+  
+</div>
+
+
+</div>

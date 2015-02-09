@@ -149,8 +149,9 @@ li.wk-chart-legend-shapeItem span {
     shape-rendering: crispEdges;
 }
 
-.wk-chart-data-label {
-    font-size: 1.3em;
+.wk-chart-rect.wk-chart-selected {
+    stroke-width:10;
+    stroke-opacity: 0.4;
 }
 
 /*# sourceMappingURL=app.css.map*/

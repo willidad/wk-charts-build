@@ -40,7 +40,7 @@
     
       <li>as element:
       
-      <pre><code>&lt;chart&#13;&#10;  data=&quot;&quot;&#13;&#10;  [deep-watch=&quot;&quot;]&#13;&#10;  [filter=&quot;&quot;]&#13;&#10;  [title=&quot;&quot;]&#13;&#10;  [subtitle=&quot;&quot;]&#13;&#10;  [animation-duration=&quot;&quot;]&gt;&#13;&#10;...&#13;&#10;&lt;/chart&gt;&#13;</code></pre>
+      <pre><code>&lt;chart&#13;&#10;  data=&quot;&quot;&#13;&#10;  [deep-watch=&quot;&quot;]&#13;&#10;  [filter=&quot;&quot;]&#13;&#10;  [header=&quot;&quot;]&#13;&#10;  [header-style=&quot;&quot;]&#13;&#10;  [sub-header=&quot;&quot;]&#13;&#10;  [sub-header-style=&quot;&quot;]&#13;&#10;  [edit=&quot;&quot;]&#13;&#10;  [edit-selection=&quot;&quot;]&#13;&#10;  [animation-duration=&quot;&quot;]&gt;&#13;&#10;...&#13;&#10;&lt;/chart&gt;&#13;</code></pre>
       </li>
     </ul>
   </div>
@@ -107,7 +107,7 @@
     
     <tr>
       <td>
-        <div><strong>title </strong></div>
+        <div><strong>header </strong></div>
         <div><em>(optional</em></div>
         
 
@@ -123,7 +123,22 @@
     
     <tr>
       <td>
-        <div><strong>subtitle </strong></div>
+        <div><strong>headerStyle </strong></div>
+        <div><em>(optional, default: font-size:"1.8em")</em></div>
+        
+
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-object">object</a>
+      </td>
+      <td>
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <div><strong>subHeader </strong></div>
         <div><em>(optional</em></div>
         
 
@@ -133,6 +148,53 @@
       </td>
       <td>
         <p>The chart subtitle</p>
+
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <div><strong>subHeaderStyle </strong></div>
+        <div><em>(optional, default: font-size:"1.3em")</em></div>
+        
+
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-object">object</a>
+      </td>
+      <td>
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <div><strong>edit </strong></div>
+        <div><em>(optional, default: false)</em></div>
+        
+
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-boolean">boolean</a>
+      </td>
+      <td>
+        <p>sets chart to edit mode if true</p>
+
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <div><strong>edit-selection </strong></div>
+        <div><em>(optional</em></div>
+        
+
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-function">function</a>
+      </td>
+      <td>
+        <p>called when and editable chart element is clicked in edit mode.</p>
 
       </td>
     </tr>

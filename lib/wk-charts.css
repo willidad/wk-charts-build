@@ -118,20 +118,25 @@ li.wk-chart-legend-shapeItem span {
     opacity:1;
 }
 
-.wk-chart-overlay .wk-chart-resize rect {
+.wk-chart-area .wk-chart-resize rect {
     stroke: black;
     fill: darkgrey;
     visibility: hidden;
 }
 
-.show-brush-handles .wk-chart-overlay .wk-chart-resize rect {
+.show-brush-handles .wk-chart-area .wk-chart-resize rect {
     visibility: visible;
 }
 
 .wk-chart-overlay .wk-chart-background {
     visibility: hidden
 }
-.wk-chart-overlay>.wk-chart-extent {
+.wk-chart-area .wk-chart-background {
+    visibility: hidden;
+    pointer-events:all;
+}
+
+.wk-chart-area>.wk-chart-extent {
     fill:lightgrey;
     fill-opacity:0.6;
 }

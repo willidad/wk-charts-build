@@ -38,7 +38,7 @@
   
     <ul>
     <li>as attribute:
-        <pre><code>&lt;layout&#13;&#10;  [selected-domain=&quot;&quot;]&#13;&#10;  [selected-domain-change=&quot;&quot;]&#13;&#10;  [clear-selection=&quot;&quot;]&gt;&#13;&#10;...&#13;&#10;&lt;/layout&gt;&#13;</code></pre>
+        <pre><code>&lt;layout&#13;&#10;  [selected-domain=&quot;&quot;]&#13;&#10;  [selected-domain-change=&quot;&quot;]&gt;&#13;&#10;...&#13;&#10;&lt;/layout&gt;&#13;</code></pre>
       </li>
     </ul>
   </div>
@@ -67,7 +67,7 @@
         <a href="" class="label type-hint type-hint-array">array</a>
       </td>
       <td>
-        <p>Array containing the selected data objects.</p>
+        <p>Array containing the selected data objects. Settimg selectedDomain to <code>[]</code> (an empty array) clears the selection</p>
 
       </td>
     </tr>
@@ -84,23 +84,6 @@
       </td>
       <td>
         <p>expression to evaluate upon a change of the brushes selected domain. The selected domain is available as ´domain´</p>
-
-      </td>
-    </tr>
-    
-    <tr>
-      <td>
-        <div><strong>clearSelection </strong></div>
-        
-        
-
-      </td>
-      <td>
-        <a href="" class="label type-hint type-hint-function">function</a>
-      </td>
-      <td>
-        <p>assigns a function that clears the selection when called via a bound scope variable.
-Usage: bind a scope variable to the attribute: <code>clear-selection=&quot;scopeVar&quot;</code>. <code>selection</code> assigns a function to scopeVar that can be called to reset the brush, e.g. in a button: <code>&lt;button ng-click=&quot;scopeVar()&quot;&gt;Clear Selection&lt;/button&gt;</code></p>
 
       </td>
     </tr>

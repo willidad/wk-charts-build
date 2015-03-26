@@ -16,7 +16,6 @@
 }
 
 .wk-chart-area-path {
-    fill-opacity:0.5!important;
     stroke-width:1!important;
     shape-rendering: crispEdges;
 }

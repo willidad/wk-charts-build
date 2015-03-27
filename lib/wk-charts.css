@@ -158,5 +158,20 @@ li.wk-chart-legend-shapeItem span {
     stroke-opacity: 0.4;
 }
 
+.wk-chart-svg-box {
+    width:1em;
+    height:calc(1.4em + 10px);
+    vertical-align: middle;
+}
+
+td.wk-chart-tt-svg-box {
+    padding: 0!important;
+}
+
+.wk-chart-legend-svg-box {
+    width:1em;
+    height:1.4em;
+    vertical-align: middle;
+}
 /*# sourceMappingURL=app.css.map*/
 /*# sourceMappingURL=maps/wk-charts.css.map */

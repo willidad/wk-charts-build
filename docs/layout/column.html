@@ -6,7 +6,7 @@
   
   <h3 id="usage">Usage</h3>
   <div class="usage">
-  <pre><code>&lt;layout column [padding=&quot;&quot;] [labels=&quot;&quot;] [label-style=&quot;&quot;] [column-style=&quot;&quot;] ... &gt;&#13;&#10;  ...&#13;&#10;&lt;/layout&gt;&#13;</code></pre>
+  <pre><code>&lt;layout column [padding=&quot;&quot;] [padding=&quot;&quot;] [labels=&quot;&quot;] [label-style=&quot;&quot;] [column-style=&quot;&quot;] ... &gt;&#13;&#10;  ...&#13;&#10;&lt;/layout&gt;&#13;</code></pre>
     
   </div>
   <table class="variables-matrix">
@@ -43,16 +43,47 @@
       <td>
         <div><strong>padding </strong></div>
         <div><em>(optional, default: true)</em></div>
-        <div><em> (Accepted Values: true, false, [padding, outerPadding])</em></div> 
+        <div><em> (Accepted Values: true, false, [padding-left, padding-right, outerPadding-left, outerPadding-right])</em></div> 
 
       </td>
       <td>
         <a href="" class="label type-hint type-hint-boolean">boolean</a><a href="" class="label type-hint type-hint-list">list</a>
       </td>
       <td>
-        <p>Defines the inner and outer padding between the bars.</p>
-<p><code>padding</code> and <code>outerPadding</code> are measured in % of the total bar space occupied, i.e. a padding of 20 implies a bar height of 80%, padding 50 implies bar and space have the same size.</p>
-<p><code>padding</code> is 10, <code>outerPadding</code> is 0 unless explicitly specified differently.</p>
+        <p>Defines the inner and outer padding between the columns.</p>
+<p>paddings are measured in % of the total bar space occupied, i.e. a padding of 20 implies a column width of 80%, padding 50 implies column and space have the same size.</p>
+<p>similar to CSS padding definitions the padding attribute allows for a couple of shortcuts:</p>
+<ul>
+<li>n,m implies both, paddings are n, both outerPaddings are m</li>
+<li>n implies all paddings are set to n,</li>
+<li>n,m, o implies left padding is n, right padding is m, outerPaddings are o</li>
+</ul>
+<p>Default <code>padding</code> is 10, <code>outerPadding</code> is 0.</p>
+<p>Setting <code>padding=&quot;false&quot;</code> is equivalent to [0,0]</p>
+
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <div><strong>padding </strong></div>
+        <div><em>(optional, default: true)</em></div>
+        <div><em> (Accepted Values: true, false, [padding-left, padding-right, outerPadding-left, outerPadding-right])</em></div> 
+
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-boolean">boolean</a><a href="" class="label type-hint type-hint-list">list</a>
+      </td>
+      <td>
+        <p>Defines the inner and outer padding between the columns.</p>
+<p>paddings are measured in % of the total bar space occupied, i.e. a padding of 20 implies a column width of 80%, padding 50 implies column and space have the same size.</p>
+<p>similar to CSS padding definitions the padding attribute allows for a couple of shortcuts:</p>
+<ul>
+<li>n,m implies both, paddings are n, both outerPaddings are m</li>
+<li>n implies all paddings are set to n,</li>
+<li>n,m, o implies left padding is n, right padding is m, outerPaddings are o</li>
+</ul>
+<p>Default <code>padding</code> is 10, <code>outerPadding</code> is 0.</p>
 <p>Setting <code>padding=&quot;false&quot;</code> is equivalent to [0,0]</p>
 
       </td>
@@ -69,7 +100,7 @@
         <a href="" class="label type-hint type-hint-boolean">boolean</a>
       </td>
       <td>
-        <p>controls the display of data labels for each of the bars.</p>
+        <p>controls the display of data labels for each of the columns.</p>
 
       </td>
     </tr>

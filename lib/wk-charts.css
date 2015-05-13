@@ -11,6 +11,12 @@
     shape-rendering: crispEdges;
 }
 
+
+.wk-chart-axis .tick-bg, .wk-chart-data-label .wk-chart-data-label-bg {
+    fill: transparent;
+}
+
+
 .wk-chart-line {
     fill:none;
 }

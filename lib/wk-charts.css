@@ -14,8 +14,15 @@
 
 .wk-chart-axis .tick-bg, .wk-chart-data-label .wk-chart-data-label-bg {
     fill: transparent;
+    pointer-events:none;
 }
 
+.wk-chart-axis text, .wk-chart-brush text {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
 .wk-chart-line {
     fill:none;
@@ -146,7 +153,7 @@ li.wk-chart-legend-shapeItem span {
     fill-opacity:0.6;
 }
 
-.wk-chart-data-label {
+.wk-chart-data-label, .wk-chart-label-text, .wk-chart-legend, .wk-chart-tooltip {
     user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -159,9 +166,15 @@ li.wk-chart-legend-shapeItem span {
     shape-rendering: crispEdges;
 }
 
-.wk-chart-rect.wk-chart-selected {
-    stroke-width:10;
-    stroke-opacity: 0.4;
+rect.wk-chart-selected {
+    stroke-width:2;
+    stroke-opacity: 1;
+    stroke:black;
+}
+
+.wk-chart-rect.wk-chart-not-selected,
+.wk-chart-box.wk-chart-not-selected {
+    fill-opacity: 0.6;
 }
 
 .wk-chart-svg-box {
@@ -179,5 +192,39 @@ td.wk-chart-tt-svg-box {
     height:1.4em;
     vertical-align: middle;
 }
+
+.wk-chart-brush-extent-marker {
+    fill: #8cee8c;
+    opacity:0.3;
+}
+
+.wk-chart-brush-line1, .wk-chart-brush-line2 {
+    stroke: darkgrey;
+    stroke-width: 1;
+    fill: white;
+}
+
+.wk-chart-brush-extent {
+    opacity: 1;
+    fill:none;
+}
+
+.wk-chart-brush-rect1, .wk-chart-brush-rect2 {
+    opacity: 1;
+    fill:none;
+}
+
+.wk-chart-brush-label1 > rect, .wk-chart-brush-label2 > rect {
+    stroke: lightgrey;
+    fill: #424242;
+}
+
+.wk-chart-brush-label1, .wk-chart-brush-label2 {
+    font-size: 15px;
+    fill:white;
+}
+
+
+
 /*# sourceMappingURL=app.css.map*/
 /*# sourceMappingURL=maps/wk-charts.css.map */
